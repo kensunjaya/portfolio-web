@@ -23,10 +23,10 @@ export const Project = ({ title, description, imageUrl, link, number, breakpoint
     "Figma": "border-purple-400 text-purple-400",
     "Socket.io": "border-orange-400 text-orange-400",
     "Firebase": "border-yellow-300 text-yellow-300",
-    "YOLOv11": "border-red-400 text-red-400",
+    "YOLO": "border-red-400 text-red-400",
     "Flask": "border-gray-300 text-gray-300",
     "GCP": "border-green-300 text-green-300",
-    "Gemini": "border-sky-400 text-sky-400",
+    "Vertex AI": "border-sky-400 text-sky-400",
   };
 
   const techStackClassesLight: Record<TechStack, string> = {
@@ -41,10 +41,10 @@ export const Project = ({ title, description, imageUrl, link, number, breakpoint
     "Figma": "border-purple-600 text-purple-600",
     "Socket.io": "border-orange-600 text-orange-600",
     "Firebase": "border-yellow-700 text-yellow-700",
-    "YOLOv11": "border-red-600 text-red-600",
+    "YOLO": "border-red-600 text-red-600",
     "Flask": "border-gray-700 text-gray-700",
     "GCP": "border-green-700 text-green-700",
-    "Gemini": "border-sky-600 text-sky-600",
+    "Vertex AI": "border-sky-600 text-sky-600",
   };
 
   const navigator = useRouter();
@@ -53,7 +53,8 @@ export const Project = ({ title, description, imageUrl, link, number, breakpoint
   return (
     <motion.div 
       initial={{ opacity: 0, x: number % 2 === 0 ? 50 : -50 }}
-      animate={{ opacity: 1, x: 0 }}  
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{once: false, amount: 0.3}}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="h-screen portrait:my-15 [@media(max-width:400px)]:portrait:pl-10 [@media(max-width:400px)]:portrait:pr-5" id={`project${number}`}
     >

@@ -59,7 +59,7 @@ export const SideBar = () => {
                     return;
                   }
                   if (id === "#experience" && orientation === "portrait") {
-                    handleScrollTo(id, 800);
+                    handleScrollTo(id);
                     return;
                   }
                   handleScrollTo(id);

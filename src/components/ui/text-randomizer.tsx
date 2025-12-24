@@ -1,11 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 import { useEffect, useState } from "react";
+import { useInView } from "../hooks/useinview";
 
 export const TextRandomizerEffect = ({ words, className, placeholder = false, callback, delay = 60 }: { words: string; className?: string; placeholder?: boolean; callback?: (arg0: number) => number; delay?: number }) => {
   const [displayedWords, setDisplayedWords] = useState(placeholder ? "\u00A0".repeat(words.length) : "");
+  const { ref, isInView } = useInView();
 
   useEffect(() => {
+    if (!isInView) {
+      setDisplayedWords(placeholder ? "\u00A0".repeat(words.length) : "");
+      return;
+    }
+
     setDisplayedWords("");
 
     const timers: NodeJS.Timeout[] = [];
@@ -34,10 +41,10 @@ export const TextRandomizerEffect = ({ words, className, placeholder = false, ca
     return () => {
       timers.forEach(clearTimeout);
     }
-  }, [words]);
+  }, [words, isInView]);
 
   return (
-    <div className={`font-medium font-primary ${className}`}>
+    <div ref={ref} className={`font-medium font-primary ${className}`}>
       {displayedWords}
     </div>
   );

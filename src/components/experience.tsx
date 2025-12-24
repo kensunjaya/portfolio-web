@@ -149,7 +149,8 @@ export const Experience = () => {
 
         <motion.div 
           initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="relative w-[300px] h-[210px] md:w-[400px] md:h-[310px] lg:w-[450px] lg:h-[340px] xl:w-[550px] xl:h-[400px] flex items-center rounded-xl justify-center overflow-hidden"
         >

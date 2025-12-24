@@ -1,4 +1,4 @@
-export const handleScrollTo = (id: string, timeout: number = 400) => {
+export const handleScrollTo = (id: string, timeout: number = 0) => {
   const el = id ? document.querySelector(id) : document.body;
   el?.scrollIntoView({ behavior: "smooth" });
   setTimeout(() => {

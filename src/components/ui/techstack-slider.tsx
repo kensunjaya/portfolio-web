@@ -8,7 +8,7 @@ export const TechStackSlider = ({ className, style }: { className?: string; styl
 
   const [size, setSize] = useState(40);
   const gap = 20; // px for Tailwind's space-x-6
-  const speed = 0.2; // px per frame
+  const speed = 0.45; // px per frame
 
   const initialTechstacks = [
     { src: "/techstacks/kotlin.svg", alt: "kotlin" },

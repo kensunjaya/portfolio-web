@@ -16,9 +16,12 @@ export const ContactSection = () => {
   const { isDarkMode } = useTheme();
 
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isAtBottom, setIsAtBottom] = useState(false);
+
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
+    setIsAtBottom(position + window.innerHeight >= document.body.scrollHeight - 100);
   };
 
   useEffect(() => {
@@ -46,14 +49,16 @@ export const ContactSection = () => {
           <div className={`flex flex-row items-center justify-center gap-10 xl:gap-20 transition-opacity ${openMessagePage ? "opacity-0" : "opacity-100"}`}>
             <motion.div
               initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="relative"
             >
               <motion.div 
                 className={`absolute rotate-270 left-[-170px] top-[100px] my-5 italic text-6xl font-primary text-header font-bold ${isDarkMode ? "drop-shadow-[0_1.1px_1.1px_rgba(1,1,1,1)]" : "drop-shadow-[0_1.1px_1.1px_rgba(255,255,255,1)]"} z-[999] whitespace-nowrap"`}
                 initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
               >
                 {"DEVELOPER"}
@@ -114,8 +119,8 @@ export const ContactSection = () => {
       <motion.footer 
         className="fixed bottom-5 landscape:bottom-15 justify-center mt-10 text-cfgray text-sm"
         initial={{ opacity: 0, y: 50 }}
-        animate={ scrollPosition + window.innerHeight >= document.body.scrollHeight - 100 ? { opacity: 1, y: 0 } : {} }
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+        animate={ isAtBottom ? { opacity: 1, y: 0 } : {} }
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
       >   
         &copy; 2025 Kenneth Sunjaya. All rights reserved.
       </motion.footer>

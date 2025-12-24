@@ -41,7 +41,7 @@ const RotateWords = ({
     initialRender.current = false;
     const id = setInterval(() => {
       setIndex((prev) => (prev + 1) % firstWord.length);
-    }, 3000);
+    }, 2500);
     return () => clearInterval(id);
   }, [firstWord.length]);
 
@@ -69,7 +69,7 @@ const RotateWords = ({
           initial={{ opacity: animateFirstTextEnter ? 0 : 1, y: animateFirstTextEnter ? -40 : 0 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: animateFirstTextExit ? 0 : 1, y: animateFirstTextExit ? 40 : 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
         >
           {firstWord[index]}
         </motion.p>
@@ -91,7 +91,7 @@ const RotateWords = ({
             y: animateSecondTextExit ? 40 : 0,
             x: translateX[index],
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
         >
           {secondWord[index]}
         </motion.p>

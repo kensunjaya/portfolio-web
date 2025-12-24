@@ -43,9 +43,11 @@ export const TextGenerateEffect = ({
             <motion.span
               key={word + idx}
               className={`opacity-0 ${font}`}
-              style={{
-                filter: filter ? "blur(10px)" : "none",
-              }}
+              style={
+                filter
+                  ? ({ filter: "blur(10px)" } as React.CSSProperties)
+                  : undefined
+              }
             >
               {word}{" "}
             </motion.span>
