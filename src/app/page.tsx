@@ -7,7 +7,6 @@ import { Project } from "@/components/project";
 import { Experience } from "@/components/experience";
 import { ContactSection } from "@/components/contact";
 import { HomeSection } from "@/components/home";
-import { LazySection } from "@/components/ui/lazy-section";
 import { ViewCVButton } from "@/components/ui/curriculum-vitae";
 import { SocialMediaLinks } from "@/components/ui/social-media";
 import { useTailwindBreakpoint } from "@/components/hooks/breakpoint";
