@@ -64,7 +64,7 @@ export const ContactSection = () => {
                 {"DEVELOPER"}
               </motion.div>
               <Image
-                src="/profile_enhanced.webp"  
+                src="/profile_pic.webp"  
                 alt="Kenneth Sunjaya"
                 draggable={false}
                 width={400}
