@@ -12,18 +12,21 @@ import { motion } from "framer-motion";
 import { useTailwindBreakpoint } from "@/components/hooks/breakpoint";
 import { ThemeChanger } from "@/components/ui/theme-changer";
 import { useTheme } from "@/components/context/theme-context";
+import { GridBackground } from "@/components/ui/grid-background";
+import { AuroraBackground } from "@/components/ui/aurora-bg";
  
 export default function ChromaWar() {
   const navigator = useRouter();
   const { breakpoint, orientation } = useTailwindBreakpoint();
   const { isDarkMode } = useTheme();
   return (
-    <div className="flex flex-col items-center w-full h-fit py-25 font-light">
-      <Spotlight height={breakpoint == 'xs' ? 850 : breakpoint == 'sm' ? 900 : breakpoint == 'md' ? 1000 : breakpoint == 'lg' ? 1200 : 1380} />
+    <div className="flex flex-col items-center w-full h-fit font-light">
+      <AuroraBackground />
+      <GridBackground />
       <SideBar />
       <ThemeChanger />
       <motion.div 
-        className="sm:w-fit p-5 lg:w-[850px]"
+        className="sm:w-fit p-5 lg:w-[850px] py-25"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}  
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -50,7 +53,7 @@ export default function ChromaWar() {
           <blockquote className="italic">{'“Why not apply a threshold using Euclidean distance, checking differences every few frames?”'}</blockquote>
           <p>It worked. The timer stabilized, and we could now reliably track idle vehicles.</p>
           <div className="flex flex-col h-fit items-center">
-            <video src="/yolo-demo.webm" autoPlay loop muted className="rounded-lg" width={600} height={0} />
+            <video src="/yolo-demo.webm" autoPlay loop muted width={600} height={0} />
             <p className="text-center text-sm mt-3">YOLOv11 + DeepSORT inference on live camera feed located at Quang Trung street, Vietnam</p>
           </div>
           <p>Of course, not every idle vehicle is illegally parked. Drivers could be waiting in their cars. To reduce false positives, we added another layer: a driver-exit detection model. Using <strong>EfficientNetB0 + LSTM</strong>, we trained the system to recognize when a driver leaves their vehicle, signaling a true parking event.</p>
@@ -64,7 +67,7 @@ export default function ChromaWar() {
             <li className="pl-2">High urgency (e.g., near a hospital) → recommend towing.</li>
           </ul>
           <div className="flex flex-col h-fit items-center">
-            <Image src="/urgency-scoring.webp" alt="Urgency Scoring" className="rounded-lg" width={800} height={0} />
+            <Image src="/urgency-scoring.webp" alt="Urgency Scoring" width={800} height={0} />
             <p className="text-center text-sm mt-3">Urgency Scoring System Overview</p>
           </div>
           <p>This way, enforcement officers wouldn’t just see detections. They’d also get actionable insights.</p>
@@ -74,7 +77,7 @@ export default function ChromaWar() {
           <p>One week before the preliminary deadline, our team camped at a café, coding and training models day and night. It was exhausting, but we managed to deploy our system on Google Cloud Platform, using the $300 credit provided by COMPFEST.</p>
           <p>Two weeks later, the results came in: from <strong>over 240+ teams, we were selected as a Top 8 Finalist.</strong></p>
           <div className="flex flex-col h-fit items-center">
-            <Image src="/aic-finalist.webp" alt="AIC Finalist" className="rounded-lg" width={600} height={0} />
+            <Image src="/aic-finalist.webp" alt="AIC Finalist" width={600} height={0} />
             <p className="text-center text-sm mt-3">AIC Finalists, taken from COMPFEST&apos;s instagram feed.</p>
           </div>
         </section>
@@ -93,7 +96,7 @@ export default function ChromaWar() {
           <p>That evening, during the Awarding Night, we sat anxiously in the packed convention hall. When the announcer finally called out: <strong>“3rd Place Winner: BananaChoco”</strong></p>
           <p>We erupted in joy. Not only did we win <strong>3rd Place</strong> among 240+ teams, we also received the <strong>Best Audience Award</strong> for the project that received the most votes from the audience.</p>
           <div className="flex flex-col h-fit items-center">
-            <Image src="/aic.webp" alt="Awarding Night AIC" className="rounded-lg" width={600} height={0} />
+            <Image src="/aic.webp" alt="Awarding Night AIC" width={600} height={0} />
             <p className="text-center text-sm mt-3">Awarding Night Session, 3rd Place - Team BananaChoco</p>
           </div>
         </section>

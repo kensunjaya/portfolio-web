@@ -96,7 +96,7 @@ export const Experience = () => {
   }, [cards]);
 
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center gap-2 md:gap-10 xl:gap-20 font-primary [@media(max-width:400px)]:portrait:pl-10 [@media(max-width:400px)]:portrait:pr-5">
+    <div className="landscape:px-30 flex flex-col min-h-screen items-center justify-center gap-2 md:gap-10 xl:gap-20 font-primary [@media(max-width:400px)]:portrait:pl-10 [@media(max-width:400px)]:portrait:pr-5">
       <div className="text-2xl md:text-3xl lg:text-4xl font-semibold text-header">Experience & Awards</div>
       <div className={`flex items-center justify-center gap-5 xl:gap-15 landscape:flex-row portrait:flex-col`} id="experience">
         <div
@@ -152,7 +152,7 @@ export const Experience = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="relative w-[300px] h-[210px] md:w-[400px] md:h-[310px] lg:w-[450px] lg:h-[340px] xl:w-[550px] xl:h-[400px] flex items-center rounded-xl justify-center overflow-hidden"
+          className="relative w-[300px] h-[210px] md:w-[400px] md:h-[310px] lg:w-[450px] lg:h-[340px] xl:w-[550px] xl:h-[400px] flex items-center justify-center overflow-hidden"
         >
           {cards.map((card, i) => (
             <Image
@@ -174,7 +174,7 @@ export const Experience = () => {
               }}
 
               draggable={false}
-              className={`rounded-xl absolute inset-0 transition-opacity duration-500 cursor-pointer
+              className={`absolute inset-0 transition-opacity duration-500 cursor-pointer
                 ${i === activeIndex ? "opacity-100" : "opacity-0"}`}
             />
           ))}

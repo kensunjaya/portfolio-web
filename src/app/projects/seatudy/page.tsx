@@ -12,18 +12,21 @@ import { motion } from "framer-motion";
 import { useTailwindBreakpoint } from "@/components/hooks/breakpoint";
 import { ThemeChanger } from "@/components/ui/theme-changer";
 import { useTheme } from "@/components/context/theme-context";
+import { AuroraBackground } from "@/components/ui/aurora-bg";
+import { GridBackground } from "@/components/ui/grid-background";
 
 export default function Seatudy() {
   const navigator = useRouter();
-  const { breakpoint, orientation } = useTailwindBreakpoint();
+  const { orientation } = useTailwindBreakpoint();
   const { isDarkMode } = useTheme();
   return (
-    <div className="flex flex-col items-center w-full h-fit py-25 font-light">
-      <Spotlight height={breakpoint == 'xs' ? 850 : breakpoint == 'sm' ? 900 : breakpoint == 'md' ? 1000 : breakpoint == 'lg' ? 1200 : 1380} />
+    <div className="flex flex-col items-center w-full h-fit font-light">
+      <AuroraBackground />
+      <GridBackground />
       <SideBar />
       <ThemeChanger />
       <motion.div 
-        className="sm:w-fit p-5 lg:w-[850px]"
+        className="sm:w-fit p-5 lg:w-[850px] py-25"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}  
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -49,7 +52,7 @@ export default function Seatudy() {
           <p>I committed myself fully to the task. For three days straight, I coded and refined the platform. Using <strong>React + Vite</strong> for the frontend and <strong>Firebase</strong> for the backend, I built a fully working solution. When I finally submitted it, I felt both nervous and proud.</p>
           <p>Two weeks later, I received the email that changed everything: I passed the technical test and the interview, securing one of just <strong>20 seats</strong> in the Software Engineering Academy, selected from thousands of applicants.</p>
           <div className="flex flex-col h-fit items-center">
-            <Image src="/sea-email.webp" alt="Email of Acceptance" className="rounded-lg" width={600} height={0} />
+            <Image src="/sea-email.webp" alt="Email of Acceptance" width={600} height={0} />
             <p className="text-center text-sm mt-3">The Email of Acceptance (translated from Bahasa Indonesia to English)</p>
           </div>
         </section>
@@ -78,7 +81,7 @@ export default function Seatudy() {
           <p>We barely slept for those last two days, debugging and fixing issues nonstop. By the morning of the deadline, we were exhausted, but SEATUDY was ready.</p>
           <p>On presentation day, everything came together. We deployed the frontend on Vercel, the backend and database on Aiven, and <Link href="https://drive.google.com/file/d/1lzcoztaus4hk5dPZLngFIRMratDwJKrR/view?usp=sharing" target="_blank" className={`${isDarkMode ? "text-blue-300" : "text-blue-500"} underline`}>showcased</Link> the platform to the jury. The response was overwhelmingly positive. They were especially impressed by our UI/UX design and how well we executed under pressure.</p>
           <div className="flex flex-col h-fit items-center">
-            <Image src="/online-pitching.webp" alt="Online Pitching of SEATUDY" className="rounded-lg" width={800} height={0} />
+            <Image src="/online-pitching.webp" alt="Online Pitching of SEATUDY" width={800} height={0} />
             <p className="text-center text-sm mt-3">The Presentation of SEATUDY Held Online</p>
           </div>
         </section>
@@ -89,7 +92,7 @@ export default function Seatudy() {
           <p>After several brainstorming sessions, we came up with <Link href="https://drive.google.com/file/d/1EPV72UQob9s_dqTMMIG-OYO_tFSSRwqK/view?usp=sharing" target="_blank" className={`${isDarkMode ? "text-blue-300" : "text-blue-500"} underline`}>ABILILINK</Link>, a platform that connects people with disabilities to job opportunities. Beyond job listings, the platform would also provide access to essential courses to help users upskill. I contributed by creating the use case diagrams and system design for the application.</p>
           <p>At the COMPFEST 16 Graduation Night, held at University of Indonesia’s Faculty of Computer Science, we presented ABILILINK to the jury. To our delight, the project received strong appreciation, and when it was time to announce the winner, our team was named Best Case Study Team. Walking up to the stage with my teammates to receive our certificates and take photos was a moment I’ll never forget.</p>
           <div className="flex flex-col h-fit items-center">
-            <Image src="/compfest-graduation-night.webp" alt="Graduation Night" className="rounded-lg" width={800} height={0} />
+            <Image src="/compfest-graduation-night.webp" alt="Graduation Night" width={800} height={0} />
             <p className="text-center text-sm mt-3">The Pitching of ABILILINK at University of Indonesia</p>
           </div>
           <p>The SEATUDY journey was more than just building an online learning platform. It was about teamwork, problem-solving, and growth. From sleepless nights debugging to standing proudly on stage at COMPFEST, the experience taught me how to collaborate effectively, think architecturally, and deliver under pressure. It was one of the most transformative experiences of my academic life—and SEATUDY will always be a reminder of the power of teamwork and perseverance.</p>

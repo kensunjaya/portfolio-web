@@ -56,7 +56,7 @@ export const Project = ({ title, description, imageUrl, link, number, breakpoint
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{once: false, amount: 0.3}}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="h-screen portrait:my-15 [@media(max-width:400px)]:portrait:pl-10 [@media(max-width:400px)]:portrait:pr-5" id={`project${number}`}
+      className="h-screen landscape:px-30 portrait:my-15 [@media(max-width:400px)]:portrait:pl-10 [@media(max-width:400px)]:portrait:pr-5" id={`project${number}`}
     >
       <div className={`flex landscape:flex-row portrait:flex-col items-center justify-center h-full landscape:gap-5 portrait:gap-10`}>
         <div className="flex-col space-y-8 max-w-[350px] lg:max-w-[500px] xl:max-w-[550px] portrait:px-4">

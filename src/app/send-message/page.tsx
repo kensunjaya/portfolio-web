@@ -15,6 +15,8 @@ import { useRouter } from "next/navigation";
 import { SocialMediaLinks } from "@/components/ui/social-media";
 import { ViewCVButton } from "@/components/ui/curriculum-vitae";
 import { ThemeChanger } from "@/components/ui/theme-changer";
+import { AuroraBackground } from "@/components/ui/aurora-bg";
+import { GridBackground } from "@/components/ui/grid-background";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -70,7 +72,8 @@ const SendMessagePage = () => {
 
   return (
     <main className="w-full h-fit overflow-hidden">
-      <Spotlight />
+      <AuroraBackground />
+      <GridBackground />
       <SocialMediaLinks />
       <ViewCVButton />
       <ThemeChanger />

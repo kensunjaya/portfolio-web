@@ -16,6 +16,7 @@ export const TechStackSlider = ({ className, style }: { className?: string; styl
     { src: "/techstacks/react.svg", alt: "react" },
     { src: "/techstacks/nextjs.svg", alt: "nextjs" },
     { src: "/techstacks/nodejs.svg", alt: "nodejs" },
+    { src: "/techstacks/dotnet.svg", alt: "dotnet" },
     { src: "/techstacks/typescript.svg", alt: "typescript" },
     { src: "/techstacks/python.svg", alt: "python" },
     { src: "/techstacks/c++.svg", alt: "c++" },

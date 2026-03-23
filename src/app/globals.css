@@ -26,7 +26,7 @@
 
 
 :root.dark {
-  --color-primary: #090F13;
+  --color-primary: #070c0f;
   --color-secondary: #89ECFF;
   --color-secondary-hover: #6AD6EB;
   --color-third: #C6D2FF;
@@ -73,6 +73,20 @@ h1, h2, h3, h4, h5, h6 {
   --font-mono: var(--font-anonymous-pro);
   --font-inter: var(--font-inter);
   --font-aldrich: var(--font-aldrich);
+
+  --animate-aurora: aurora 60s linear infinite;
+  @keyframes aurora {
+    from {
+      background-position:
+        50% 50%,
+        50% 50%;
+    }
+    to {
+      background-position:
+        350% 50%,
+        350% 50%;
+    }
+  }
 }
 
 body {

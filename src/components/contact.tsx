@@ -43,7 +43,7 @@ export const ContactSection = () => {
   }, [openMessagePage]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center" id="contact">
+    <div className="min-h-screen flex flex-col items-center justify-center landscape:px-30" id="contact">
       {
         orientation === 'landscape' ? (
           <div className={`flex flex-row items-center justify-center gap-10 xl:gap-20 transition-opacity ${openMessagePage ? "opacity-0" : "opacity-100"}`}>
@@ -122,7 +122,7 @@ export const ContactSection = () => {
         animate={ isAtBottom ? { opacity: 1, y: 0 } : {} }
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
       >   
-        &copy; 2025 Kenneth Sunjaya. All rights reserved.
+        &copy; 2026 Kenneth Sunjaya. All rights reserved.
       </motion.footer>
     </div>
   );

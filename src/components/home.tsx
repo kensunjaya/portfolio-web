@@ -13,7 +13,7 @@ export const HomeSection = () => {
   };
 
   return (
-    <div className="h-screen scale-42 landscape:sm:scale-80 landscape:md:scale-100 [@media(min-width:400px)]:portrait:scale-48  [@media(min-width:600px)]:portrait:scale-62" id="home">
+    <div className="h-screen landscape:px-30 scale-42 landscape:sm:scale-80 landscape:md:scale-100 [@media(min-width:400px)]:portrait:scale-48  [@media(min-width:600px)]:portrait:scale-62" id="home">
       <div className="flex flex-col items-center justify-center h-full text-header text-4xl">
         <div className="space-y-4">
           <TextRandomizerEffect words="KENNETH SUNJAYA" className="tracking-widest text-header text-5xl md:text-4xl" callback={(opacity: number) => { setOpacity(opacity); return opacity; }} />

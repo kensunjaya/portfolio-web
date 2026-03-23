@@ -12,18 +12,21 @@ import { motion } from "framer-motion";
 import { useTailwindBreakpoint } from "@/components/hooks/breakpoint";
 import { ThemeChanger } from "@/components/ui/theme-changer";
 import { useTheme } from "@/components/context/theme-context";
+import { GridBackground } from "@/components/ui/grid-background";
+import { AuroraBackground } from "@/components/ui/aurora-bg";
 
 export default function NextSudoku() {
   const navigator = useRouter();
-  const { breakpoint, orientation } = useTailwindBreakpoint();
+  const { orientation } = useTailwindBreakpoint();
   const { isDarkMode } = useTheme();
   return (
-    <div className="flex flex-col items-center w-full h-fit py-25 font-light">
-      <Spotlight height={breakpoint == 'xs' ? 850 : breakpoint == 'sm' ? 900 : breakpoint == 'md' ? 1000 : breakpoint == 'lg' ? 1200 : 1380} />
+    <div className="flex flex-col items-center w-full h-fit font-light">
+      <AuroraBackground />
+      <GridBackground />
       <SideBar />
       <ThemeChanger />
       <motion.div 
-        className="sm:w-fit p-5 lg:w-[850px]"
+        className="sm:w-fit p-5 lg:w-[850px] py-25"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}  
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -49,7 +52,7 @@ export default function NextSudoku() {
           </ul>
           <p>The method worked… but it was painfully slow. Sometimes it took over a minute just to generate a puzzle. Still, it was enough to submit and pass <Link href="https://github.com/kensunjaya/sudoku" target="_blank" className={`${isDarkMode ? "text-blue-300" : "text-blue-500"} underline`}>my project</Link>, and I moved on.</p>
           <div className="flex flex-col h-fit items-center">
-            <Image src="/sudoku-cli.webp" alt="Sudoku CLI" className="rounded-lg" width={600} height={0} />
+            <Image src="/sudoku-cli.webp" alt="Sudoku CLI" width={600} height={0} />
             <p className="text-center text-sm mt-3">Sudoku on Command Line Interface</p>
           </div>
         </section>
@@ -74,7 +77,7 @@ export default function NextSudoku() {
           <p>A few weeks later, another final project came along: this time, we had to build something that used an AWS service. I decided to extend my Sudoku project by migrating the leaderboard from MongoDB Atlas to <Link href="https://aws.amazon.com/dynamodb/" target="_blank" className={`${isDarkMode ? "text-blue-300" : "text-blue-500"} underline`}>AWS DynamoDB.</Link></p>
           <p>After some tweaking, the migration worked and the difference in performance was noticeable. DynamoDB handled reads and writes faster than MongoDB, making the leaderboard even smoother.</p>
           <div className="flex flex-col h-fit items-center pb-5">
-            <Image src="/next-sudoku-preview.webp" alt="NExT Sudoku" className="rounded-lg" width={600} height={0} />
+            <Image src="/next-sudoku-preview.webp" alt="NExT Sudoku" width={600} height={0} />
             <p className="text-center text-sm mt-3">Final Release of NExT Sudoku</p>
           </div>
         </section>
