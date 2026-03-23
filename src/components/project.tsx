@@ -52,7 +52,7 @@ export const Project = ({ title, description, imageUrl, link, number, breakpoint
 
   return (
     <motion.div 
-      initial={{ opacity: 0, x: number % 2 === 0 ? 50 : -50 }}
+      initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{once: false, amount: 0.3}}
       transition={{ duration: 0.6, ease: "easeOut" }}
