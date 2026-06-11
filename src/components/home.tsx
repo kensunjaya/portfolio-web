@@ -13,15 +13,15 @@ export const HomeSection = () => {
   };
 
   return (
-    <div className="h-screen landscape:px-30 scale-42 landscape:sm:scale-80 landscape:md:scale-100 [@media(min-width:400px)]:portrait:scale-48  [@media(min-width:600px)]:portrait:scale-62" id="home">
-      <div className="flex flex-col items-center justify-center h-full text-header text-4xl">
-        <div className="space-y-4">
-          <TextRandomizerEffect words="KENNETH SUNJAYA" className="tracking-widest text-header text-5xl md:text-4xl" callback={(opacity: number) => { setOpacity(opacity); return opacity; }} />
-          <div className="min-w-[50rem]">
+    <div className="h-screen flex items-center justify-center px-4 sm:px-10 md:px-20 lg:px-30" id="home">
+      <div className="flex flex-col justify-center text-header">
+        <div className="space-y-4 max-w-4xl">
+          <TextRandomizerEffect words="KENNETH SUNJAYA" className="tracking-widest text-header text-2xl sm:text-5xl md:text-4xl font-bold" callback={(opacity: number) => { setOpacity(opacity); return opacity; }} />
+          <div className="w-full max-w-[50rem]">
             <RoleAnimator />
           </div>
-          <TextGenerateEffect font="font-inter" words={'"I build full-stack web and mobile applications with a focus on performance, scalability, and user experience."'} className="tracking-widest text-[32px] sm:text-md md:text-lg text-cfgray max-w-[50rem]" duration={0.2} delay={0.15} />
-          <TechStackSlider className="mt-10" style={{ opacity: techStackOpacity / 100 }} />
+          <TextGenerateEffect font="font-inter" words={'"I build full-stack web and mobile applications with a focus on performance, scalability, and user experience."'} className="tracking-widest text-sm sm:text-base md:text-lg text-cfgray max-w-[50rem] mt-3" duration={0.2} delay={0.15} />
+          <TechStackSlider className="mt-10 w-full max-w-[50rem]" style={{ opacity: techStackOpacity / 100 }} />
         </div>
       </div>
     </div>

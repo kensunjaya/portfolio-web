@@ -50,6 +50,16 @@ export const Project = ({ title, description, imageUrl, link, number, breakpoint
   const navigator = useRouter();
   const { isDarkMode } = useTheme();
 
+  const displayWidth = breakpoint === 'xs' ? 300 : breakpoint === "sm" ? 350 : breakpoint === "md" ? 400 : breakpoint === "lg" ? 450 : 500;
+  const getAspectHeight = (url: string, w: number) => {
+    if (url.includes("chroma-war")) return Math.round(w * 3258 / 4276);
+    if (url.includes("next-sudoku")) return Math.round(w * 3114 / 3222);
+    if (url.includes("seatudy")) return Math.round(w * 3513 / 6033);
+    if (url.includes("horus-ai-preview")) return Math.round(w * 2162 / 3580);
+    return w;
+  };
+  const displayHeight = getAspectHeight(imageUrl, displayWidth);
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -102,8 +112,8 @@ export const Project = ({ title, description, imageUrl, link, number, breakpoint
           <Image 
             src={imageUrl} 
             alt={title} 
-            width={breakpoint === 'xs' ? 300 : breakpoint === "sm" ? 350 : breakpoint === "md" ? 400 : breakpoint === "lg" ? 450 : 500} 
-            height={0}
+            width={displayWidth} 
+            height={displayHeight}
             style={{ height: "auto" }}
             draggable={false} 
           />

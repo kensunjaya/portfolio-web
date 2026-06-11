@@ -3,7 +3,7 @@ import { MdOutlineOpenInNew } from "react-icons/md";
 
 export const ViewCVButton = () => {
   return (
-    <div className="fixed top-3 md:top-10 right-0 md:right-10 w-fit h-fit z-1000">
+    <div className="fixed top-3 md:top-10 right-3 md:right-10 w-fit h-fit z-1000 hidden md:block">
       <CustomButton
         onClick={() => window.open("https://drive.google.com/file/d/1FK6_qN6HIfVV9YIiNEB3ayr-irGcylff/view?usp=sharing", "_blank")}
         nofill

@@ -3,5 +3,10 @@
     "bootcamp",
     "cfgray",
     "techstacks"
-  ]
+  ],
+  "files.associations": {
+    "atomic": "cpp",
+    "memory": "cpp",
+    "mutex": "cpp"
+  }
 }

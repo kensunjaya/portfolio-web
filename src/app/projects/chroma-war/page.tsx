@@ -49,7 +49,7 @@ export default function ChromaWar() {
         <section className="flex flex-col gap-5 text-lg text-cfgray">
           <p>The first step was to develop the main game logic—the chain reaction itself. To my surprise, the recursion turned out to be pretty straightforward. Within five minutes I figured it out, and in about thirty minutes of coding, I had a working prototype.</p>
           <div className="flex flex-col h-fit items-center">
-            <Image src="/chroma-war-prototype.webp" alt="Chroma War First Ever Working Prototype" width={600} height={0} />
+            <Image src="/chroma-war-prototype.webp" alt="Chroma War First Ever Working Prototype" width={600} height={338} style={{ height: "auto" }} />
             <p className="text-center text-sm mt-3">The First Iteration of Working Prototype of Chroma War</p>
           </div>
           <p>Next came the animations. I wanted to add a satisfying “burst” effect when a cell reached four dots. Using <strong>TailwindCSS</strong> for styling and <strong>Framer Motion</strong> for the animation, I was able to make it come alive. It wasn’t easy as I was still new to Framer Motion and was juggling my 4th-semester final projects at the time. After several days, I finally got it right.</p>
@@ -86,7 +86,7 @@ export default function ChromaWar() {
         <section className="flex flex-col gap-5 text-lg text-cfgray">
           <p>With the Versus AI mode complete, the game was halfway done. The next step was enabling multiplayer. I used <strong>WebSockets (Socket.IO)</strong> for real-time communication and <strong>Node.js</strong> as the backend. This allowed players to connect and play against each other from anywhere—no longer tied to a single device.</p>
           <div className="flex flex-col h-fit items-center">
-            <Image src="/chroma-war-final.webp" alt="Chroma War Final Preview" width={600} height={0} />
+            <Image src="/chroma-war-final.webp" alt="Chroma War Final Preview" width={600} height={420} style={{ height: "auto" }} />
             <p className="text-center text-sm mt-3">Final Preview of Chroma War</p>
           </div>
           <p>What started as a casual gaming night with friends turned into one of my most exciting projects yet. Along the way, I learned about recursion, animations, AI algorithms, and real-time networking. But more than that, I discovered how a small spark of inspiration—born from laughter in a dorm could grow into a full-fledged strategy game that others can enjoy.</p>

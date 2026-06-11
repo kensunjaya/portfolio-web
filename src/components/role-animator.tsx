@@ -15,7 +15,7 @@ export const RoleAnimator = () => {
 
   if (index === 0) {
     return (
-      <TextGenerateEffect words="Software Engineer." className="text-7xl text-header" />
+      <TextGenerateEffect words="Software Engineer." className="text-3xl sm:text-5xl md:text-7xl text-header" />
     );
   } else {
     return (
@@ -24,7 +24,7 @@ export const RoleAnimator = () => {
   }
 };
 
- 
+
 const RotateWords = ({
   firstWord = ["Software", "Software", "Front-End", "Mobile"],
   secondWord = ["Engineer.", "Developer.", "Developer.", "Developer."],
@@ -62,7 +62,7 @@ const RotateWords = ({
 
 
   return (
-    <div className="text-7xl font-medium tracking-wide leading-snug flex">
+    <div className="text-3xl sm:text-5xl md:text-7xl font-medium tracking-wide leading-snug flex flex-wrap justify-start text-header">
       <AnimatePresence mode="wait">
         <motion.p
           key={firstWord[index] + index}

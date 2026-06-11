@@ -68,7 +68,7 @@ export const ContactSection = () => {
                 alt="Kenneth Sunjaya"
                 draggable={false}
                 width={400}
-                height={0}
+                height={517}
                 style={{ height: "auto" }}
               />
             </motion.div>
@@ -108,7 +108,7 @@ export const ContactSection = () => {
                 alt="Kenneth Sunjaya"
                 draggable={false}
                 width={breakpoint === 'xs' || breakpoint === "sm" ? 300 : breakpoint === "md" ? 350 : breakpoint === 'lg' ? 400 : 500}
-                height={0}
+                height={breakpoint === 'xs' || breakpoint === "sm" ? 388 : breakpoint === "md" ? 453 : breakpoint === 'lg' ? 517 : 647}
                 style={{ height: "auto" }}
               />
             </motion.div>
