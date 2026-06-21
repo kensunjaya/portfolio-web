@@ -54,7 +54,7 @@ export const SideBar = () => {
   return (
     <>
       {/* Desktop Sidebar (Landscape / Medium+ Screens) */}
-      <nav className="fixed top-5 text-cfgray md:top-10 left-0 md:left-5 lg:left-10 h-0 w-16 bg-transparent hidden md:flex flex-col items-center justify-between z-[999] md:scale-100">
+      <nav className="fixed top-5 text-cfgray md:top-10 left-0 md:left-5 lg:left-10 h-0 w-16 bg-transparent hidden md:flex md:flex-col items-center justify-between z-[999] md:scale-100">
         <div className="flex flex-col items-center space-y-45">
           <Image
             src={isDarkMode ? "/logo.svg" : "/logolight.svg"}

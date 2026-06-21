@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${anonymousPro.variable} ${inter.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${anonymousPro.variable} ${inter.variable} overflow-x-hidden`}>
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </head>

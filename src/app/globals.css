@@ -95,6 +95,11 @@ body {
   scroll-behavior: smooth;
 }
 
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
 section {
   font-family: var(--font-inter);
 }

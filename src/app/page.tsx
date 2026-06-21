@@ -95,7 +95,7 @@ function Home() {
         number={3}
         breakpoint={breakpoint}
         techstacks={['Next.js', 'TypeScript', 'PostgreSQL', 'Express', 'Figma']}
-        project_story_path={"/projects/seatudy"}  
+        project_story_path={"/projects/seatudy"}
       />
 
       <Project
@@ -107,7 +107,7 @@ function Home() {
         number={4}
         breakpoint={breakpoint}
         techstacks={['Next.js', 'GCP', 'YOLO', 'Flask', 'Firebase', 'Vertex AI']}
-        project_story_path={"/projects/horus-ai"}  
+        project_story_path={"/projects/horus-ai"}
       />
 
       <Experience />

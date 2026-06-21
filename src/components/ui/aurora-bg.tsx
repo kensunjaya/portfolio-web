@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { useTheme } from "../context/theme-context";
 
 interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
@@ -8,17 +8,67 @@ interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
   showRadialGradient?: boolean;
 }
 
+const MOBILE_BREAKPOINT = 768;
+
 export const AuroraBackground = ({
   className,
   showRadialGradient = true,
   ...props
 }: AuroraBackgroundProps) => {
   const { isDarkMode } = useTheme();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Lightweight static gradient for mobile — no animation, no blur, no blend modes
+  if (isMobile) {
+    return (
+      <main>
+        <div
+          className={cn(
+            "transition-bg z-[-100] absolute left-0 top-0 flex h-[100vh] w-full flex-col items-center justify-center [mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)]",
+            isDarkMode ? "bg-zinc-900 opacity-15" : "bg-zinc-50 opacity-25",
+            className,
+          )}
+          {...props}
+        >
+          <div
+            className="absolute inset-0 overflow-hidden"
+          >
+            <div
+              className={cn(
+                "pointer-events-none absolute inset-0 opacity-50",
+                isDarkMode ? "invert-0" : "invert",
+                showRadialGradient &&
+                  "[mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,transparent_70%)]",
+              )}
+              style={{
+                backgroundImage: isDarkMode
+                  ? "repeating-linear-gradient(100deg,#000_0%,#000_7%,transparent_10%,transparent_12%,#000_16%), repeating-linear-gradient(100deg,#3b82f6_10%,#a5b4fc_15%,#93c5fd_20%,#ddd6fe_25%,#60a5fa_30%)"
+                  : "repeating-linear-gradient(100deg,#fff_0%,#fff_7%,transparent_10%,transparent_12%,#fff_16%), repeating-linear-gradient(100deg,#3b82f6_10%,#a5b4fc_15%,#93c5fd_20%,#ddd6fe_25%,#60a5fa_30%)",
+                backgroundSize: "200% 100%",
+                backgroundPosition: "50% 50%",
+              }}
+            />
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  // Full animated aurora for desktop
   return (
     <main>
       <div
         className={cn(
-          "transition-bg z-[-100] absolute flex h-[100vh] w-full flex-col items-center justify-center [mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)]",
+          "transition-bg z-[-100] absolute left-0 top-0 flex h-[100vh] w-full flex-col items-center justify-center [mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)]",
           isDarkMode ? "bg-zinc-900 opacity-15" : "bg-zinc-50 opacity-25",
           className,
         )}

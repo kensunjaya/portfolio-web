@@ -20,19 +20,19 @@ export default function NextSudoku() {
   const { orientation } = useTailwindBreakpoint();
   const { isDarkMode } = useTheme();
   return (
-    <div className="flex flex-col items-center w-full h-fit font-light">
+    <div className="flex flex-col items-center w-full h-fit font-light overflow-x-hidden">
       <AuroraBackground />
       <GridBackground />
       <SideBar />
       <ThemeChanger />
       <motion.div 
-        className="sm:w-fit p-5 lg:w-[850px] py-25"
+        className="w-full max-w-[850px] p-5 py-25"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}  
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         {
-          orientation === "landscape" ? <TextRandomizerEffect className="text-4xl text-header font-semibold whitespace-nowrap" words="A Journey of NExT Sudoku Creation" delay={40} /> : <h1 className="text-4xl font-semibold">A Journey of NExT Sudoku Creation</h1>
+          orientation === "landscape" ? <TextRandomizerEffect className="text-4xl text-header font-semibold" words="A Journey of NExT Sudoku Creation" delay={40} /> : <h1 className="text-4xl font-semibold">A Journey of NExT Sudoku Creation</h1>
         }
         <div className="flex mt-5 mb-3 text-cfgray text-sm items-center">
           <FaRegClock />
